@@ -1,6 +1,6 @@
 **SIMPLILEARN Implementing a Team Communication Solution Using Mattermost and AWS.**
 
-***Project 2 ***
+***Project 2 (AWS SYSOPS)***
 
 DESCRIPTION
 
