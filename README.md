@@ -1,4 +1,4 @@
-**Implementing a Team Communication Solution Using Mattermost and AWS.**
+**SIMPLILEARN Implementing a Team Communication Solution Using Mattermost and AWS.**
 
 ***Project 2 ***
 
