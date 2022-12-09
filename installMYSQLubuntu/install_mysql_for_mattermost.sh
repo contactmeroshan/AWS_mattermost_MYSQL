@@ -1,11 +1,11 @@
 #!/bin/bash
-apt update -y
-apt install mysql-server -y
+sudo apt update -y
+sudo apt install mysql-server -y
 echo "Installed MySQL"
 echo "Configuring MySQL now"
 
 
-mysql -u root <<-EOF
+sudo mysql -u root <<-EOF
 UPDATE mysql.user SET authentication_string=PASSWORD('password') WHERE User='root';
 DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
 DELETE FROM mysql.user WHERE User='';
@@ -17,7 +17,7 @@ GRANT ALL PRIVILEGES ON mattermost_test.* TO 'mmuser'@'%';
 EOF
 
 echo "MySQL Congiguration complete"
-sed "s/bind-address/#bind-address/" /etc/mysql/mysql.conf.d/mysqld.cnf > mysqld.cnf
-mv mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf 
+sudo sed "s/bind-address/#bind-address/" /etc/mysql/mysql.conf.d/mysqld.cnf > mysqld.cnf
+sudo mv mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf 
 
-/etc/init.d/mysql restart
+sudo /etc/init.d/mysql restart
